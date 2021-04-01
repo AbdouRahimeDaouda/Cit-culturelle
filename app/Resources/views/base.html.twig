@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js " lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+
+    <title>{% block title %}Cite de la culture{% endblock %}</title>
+
+    {% block stylesheets %}
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
+
+        <!-- Custom Css -->
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" href={{ asset('css/color_skins.css') }}>
+
+
+        <link rel="stylesheet" href="{{ asset('plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('plugins/morrisjs/morris.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
+
+
+
+
+        <link rel="stylesheet" href="{{ asset('plugins/jvectormap/jquery-jvectormap-2.0.3.min.css')}}"/>
+        <link rel="stylesheet" href="{{ asset('plugins/morrisjs/morris.min.css')}}" />
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+
+    {% endblock %}
+
+
+</head>
+<body class="theme-purple">
+{% block header %}
+
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30"><img class="zmdi-hc-spin" src="https://thememakker.com/templates/infinio/html/assets/images/logo.svg" width="48" height="48" alt="InfiniO"></div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+
+    <!-- Top Bar -->
+    <nav class="top_navbar">
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-12">
+                    <div class="navbar-logo">
+                        <a href="javascript:void(0);" class="bars"></a>
+                        <a class="navbar-brand" href="/PIDEV/web/app_dev.php/"><img src="https://thememakker.com/templates/infinio/html/assets/images/logo.svg" width="30" alt="InfiniO"><span class="m-l-10">Medsirat</span></a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="search_bar hidden-xs">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Find your stuff...">
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="leftsidebar" class="sidebar h_menu">
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-12">
+                    <div class="menu">
+                        <ul class="list">
+                            <li class="header">MAIN</li>
+                            <li> <a href=""><i class="icon-speedometer"></i><span>Qui Somme nous?</span></a></li>
+                            <li><a href="javascript:void(0);" class="menu-toggle"><i class="icon-grid"></i><span>Nos métiers</span></a>
+
+                            </li>
+
+                            <li><a href="javascript:void(0);" class="menu-toggle"><i class="icon-layers"></i><span>Activité</span></a>
+                                <ul class="ml-menu">
+                                    <li><a href="/PIDEV/web/app_dev.php/workshop/">Workshops</a></li>
+                                    <li><a href="/PIDEV/web/app_dev.php/club/">Clubs</a></li>
+
+                                </ul>
+                            </li>
+
+
+
+                            <li><a href="javascript:void(0);" class="menu-toggle"><i class="icon-bar-chart"></i><span>Media center</span></a>
+                                <ul class="ml-menu">
+                                    <li><a href="morris.html">Galérie</a></li>
+                                    <li><a href="">Ils ont parlé de nous</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="header">EXTRA COMPONENTS</li>
+                            <li><a href="" class="menu-toggle"><i class="icon-puzzle"></i><span>Blog</span></a>
+
+                            </li>
+
+                            <li > <a href="javascript:void(0);" class="menu-toggle"><i class="icon-folder-alt"></i><span>Contact</span></a>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Right Sidebar -->
+
+
+
+    <!-- Jquery Core Js -->
+{% endblock %}
+
+{% block body %}
+
+    <!-- Main Content -->
+    <section class="content">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+
+
+        </div>
+    </section>
+
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('bundles/libscripts.bundle.js') }}"></script>
+    <script src="{{ asset('bundles/vendorscripts.bundle.js') }}"></script>
+    <script src="{{ asset('bundles/mainscripts.bundle.js') }}"></script><!-- Lib Scripts Plugin Js -->
+{% endblock %}
+
+</body>
+</html>

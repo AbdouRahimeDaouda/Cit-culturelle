@@ -1,0 +1,40 @@
+{% extends 'front.html.twig' %}
+
+            {% block content %}
+
+                    <div class="d-lg-flex position-relative">
+                        <div class="container d-lg-flex align-items-lg-center space-top-2 space-top-md-5 space-lg-0 min-height-lg-100vh">
+                            <div style="width: 1200px">
+
+                                <h2> Workshops</h2>
+                                        <div class="body">
+
+
+                                            <table class="table table-striped table-bordered table-info">
+                                                <thead>
+                                                <tr>
+
+                                                    <th>Nbparticipant</th>
+                                                    <th>Datedebut</th>
+                                                    <th>Datefin</th>
+                                                    <th>Description</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for workshop in workshops %}
+                                                    <tr>
+                                                        <td>{{ workshop.nbParticipant }}</td>
+                                                        <td>{% if workshop.dateDebut %}{{ workshop.dateDebut|date('Y-m-d') }}{% endif %}</td>
+                                                        <td>{% if workshop.dateFin %}{{ workshop.dateFin|date('Y-m-d') }}{% endif %}</td>
+                                                        <td>{{ workshop.description }}</td>
+
+                                                    </tr>
+                                                {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                        </div>
+                    </div>
+                    </div>
+            {% endblock %}

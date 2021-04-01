@@ -1,0 +1,67 @@
+{% extends 'front.html.twig' %}
+
+ {% block content %}
+     <div class="d-lg-flex position-relative">
+     <div class="container d-lg-flex align-items-lg-center space-top-2 space-top-md-5 space-lg-0 min-height-lg-100vh">
+     <div style="width: 1200px">
+
+    <h1>Clubs list</h1>
+     <div class="body">
+
+    <table class="table table-striped table-bordered table-info" style="text-align: center;">
+        <thead>
+        <tr>
+
+            <th>Nom</th>
+            <th>Genre</th>
+            <th>Datecreation</th>
+            <th>Groupeage</th>
+            <th>Prixinscri</th>
+            <th>Description</th>
+            <th>Etat</th>
+            <th>President</th>
+            <th>Nbrparticipant</th>
+            <th>Budget</th>
+            {% if app.user is not null %}
+            <th>Actions</th>
+            {% endif %}
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for club in clubs %}
+            <tr>
+
+                <td>{{ club.nom }}</td>
+                <td>{{ club.genre }}</td>
+                <td>{% if club.dateCreation %}{{ club.dateCreation|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ club.groupeAge }}</td>
+                <td>{{ club.prixInscri }}</td>
+                <td>{{ club.description }}</td>
+                <td>{{ club.etat }}</td>
+                <td>{{ club.president }}</td>
+                <td>{{ club.nbrParticipant }}</td>
+                <td>{{ club.budget }}</td>
+                {% if app.user is not null %}
+                    {% if club.id in inss %}
+                <td>
+                    <a class="btn btn-info" href="{{ path('desinscription', { 'id':club.id }) }}">Se désinscrire</a>
+                </td>
+                        {% else %}
+                    <td>
+                        <a class="btn btn-info" href="{{ path('inscription', { 'id':club.id }) }}">S'inscrire</a>
+                    </td>
+                        {% endif %}
+                {% endif %}
+
+            </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+     </div>
+     </div>
+     </div>
+     </div>
+
+
+{% endblock %}
